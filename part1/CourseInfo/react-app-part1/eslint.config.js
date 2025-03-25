@@ -1,7 +1,7 @@
-import js from '../courseinfo/CourseInfo/react-app-part1/node_modules/@eslint/js/types';
-import globals from '../courseinfo/CourseInfo/react-app-part1/node_modules/globals';
-import reactHooks from '../courseinfo/CourseInfo/react-app-part1/node_modules/eslint-plugin-react-hooks';
-import reactRefresh from '../courseinfo/CourseInfo/react-app-part1/node_modules/eslint-plugin-react-refresh';
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
   { ignores: ['dist'] },
@@ -30,4 +30,4 @@ export default [
       ],
     },
   },
-];
+]
