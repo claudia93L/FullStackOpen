@@ -1,21 +1,11 @@
 import React from 'react';
 
-const DisplayStatistics = ({
-  good,
-  neutral,
-  bad,
-  totalFeedbacks,
-  averageScore,
-  positiveFeedbackPercentage,
-}) => {
+const DisplayStatistics = ({ text, value }) => {
   return (
     <div>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>All: {totalFeedbacks}</p>
-      <p>Average: {averageScore}</p>
-      <p>Positive: {positiveFeedbackPercentage}</p>
+      <p>
+        {text}: {value}
+      </p>
     </div>
   );
 };

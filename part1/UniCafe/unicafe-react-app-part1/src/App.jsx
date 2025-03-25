@@ -17,8 +17,8 @@ const App = () => {
 
   const handleGoodClick = () => {
     setGood(good + 1);
-    const updatedGood = good + 1;
-    setTotalFeedbacks(updatedGood + bad + neutral);
+    //const updatedGood = good + 1;
+    //setTotalFeedbacks(updatedGood + bad + neutral);
   };
 
   const handleNeutralClick = () => {
@@ -40,13 +40,17 @@ const App = () => {
       <Button onClick={handleNeutralClick} btnName='Neutral'></Button>
       <Button onClick={handleBadClick} btnName='Bad'></Button>
       <Title title='Statistics'></Title>
+      <StatisticLine text='Good' value={good}></StatisticLine>
+      <StatisticLine text='Neutral' value={neutral}></StatisticLine>
+      <StatisticLine text='Bad' value={bad}></StatisticLine>
       <StatisticLine
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        totalFeedbacks={totalFeedbacks}
-        averageScore={averageScore}
-        positiveFeedbackPercentage={positiveFeedbackPercentage}
+        text='Total Feedbacks'
+        value={totalFeedbacks}
+      ></StatisticLine>
+      <StatisticLine text='Average Score' value={averageScore}></StatisticLine>
+      <StatisticLine
+        text='Positive Feedback Percentage'
+        value={positiveFeedbackPercentage}
       ></StatisticLine>
     </>
   );
