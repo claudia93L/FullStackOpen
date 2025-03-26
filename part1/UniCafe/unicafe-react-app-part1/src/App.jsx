@@ -11,9 +11,17 @@ const App = () => {
   //const [totalFeedbacks, setTotalFeedbacks] = useState(0);
   //const [averageScore, setAverageScore] = useState(0);
   //const [positiveFeedbackPercentage, setPositiveFeedbackPercentage] = useState(0);
+
   const totalFeedbacks = good + neutral + bad;
-  const averageScore = 0;
-  const positiveFeedbackPercentage = 0;
+  const averageScore =
+    totalFeedbacks === 0
+      ? 0
+      : (good * 1 + neutral * 0 + bad * -1) / totalFeedbacks;
+  const positiveFeedbackPercentage =
+    totalFeedbacks === 0 ? 0 : (good / totalFeedbacks) * 100;
+
+  const calculatePositiveFeedbackPercentage = () =>
+    (good / totalFeedbacks) * 100;
 
   const handleGoodClick = () => {
     setGood(good + 1);
