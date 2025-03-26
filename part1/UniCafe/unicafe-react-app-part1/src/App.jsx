@@ -20,9 +20,6 @@ const App = () => {
   const positiveFeedbackPercentage =
     totalFeedbacks === 0 ? 0 : (good / totalFeedbacks) * 100;
 
-  const calculatePositiveFeedbackPercentage = () =>
-    (good / totalFeedbacks) * 100;
-
   const handleGoodClick = () => {
     setGood(good + 1);
     //const updatedGood = good + 1;
@@ -48,18 +45,22 @@ const App = () => {
       <Button onClick={handleNeutralClick} btnName='Neutral'></Button>
       <Button onClick={handleBadClick} btnName='Bad'></Button>
       <Title title='Statistics'></Title>
-      <StatisticLine text='Good' value={good}></StatisticLine>
-      <StatisticLine text='Neutral' value={neutral}></StatisticLine>
-      <StatisticLine text='Bad' value={bad}></StatisticLine>
-      <StatisticLine
-        text='Total Feedbacks'
-        value={totalFeedbacks}
-      ></StatisticLine>
-      <StatisticLine text='Average Score' value={averageScore}></StatisticLine>
-      <StatisticLine
-        text='Positive Feedback Percentage'
-        value={positiveFeedbackPercentage}
-      ></StatisticLine>
+      {totalFeedbacks > 0 ? (
+        <>
+          <Title title='Statistics' />
+          <StatisticLine text='Good' value={good} />
+          <StatisticLine text='Neutral' value={neutral} />
+          <StatisticLine text='Bad' value={bad} />
+          <StatisticLine text='Total Feedbacks' value={totalFeedbacks} />
+          <StatisticLine text='Average Score' value={averageScore.toFixed(2)} />
+          <StatisticLine
+            text='Positive Feedback Percentage'
+            value={`${positiveFeedbackPercentage.toFixed(2)}%`}
+          />
+        </>
+      ) : (
+        <p>No feedback given yet.</p>
+      )}
     </>
   );
 };
