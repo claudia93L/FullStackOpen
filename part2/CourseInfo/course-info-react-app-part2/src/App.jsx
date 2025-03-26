@@ -1,3 +1,7 @@
+import Course from './components/Course';
+import Header from './components/Header';
+import Total from './components/Total';
+
 const App = () => {
   const course = {
     id: 1,
@@ -18,10 +22,21 @@ const App = () => {
         exercises: 14,
         id: 3,
       },
+      {
+        name: 'Redux',
+        exercises: 11,
+        id: 4,
+      },
     ],
   };
 
-  return <Course course={course} />;
+  return (
+    <div>
+      <Header course={course}></Header>
+      <Course course={course} />
+      <Total course={course}></Total>
+    </div>
+  );
 };
 
 export default App;
