@@ -5,7 +5,9 @@ const Total = ({ course }) => {
 
   return (
     <div>
-      <p>Total number of exercises {total}</p>
+      <p>
+        <strong>Total number of exercises: {total}</strong>
+      </p>
     </div>
   );
 };
