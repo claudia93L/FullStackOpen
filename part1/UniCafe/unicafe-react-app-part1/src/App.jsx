@@ -8,9 +8,6 @@ const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  //const [totalFeedbacks, setTotalFeedbacks] = useState(0);
-  //const [averageScore, setAverageScore] = useState(0);
-  //const [positiveFeedbackPercentage, setPositiveFeedbackPercentage] = useState(0);
 
   const totalFeedbacks = good + neutral + bad;
   const averageScore =
@@ -22,20 +19,14 @@ const App = () => {
 
   const handleGoodClick = () => {
     setGood(good + 1);
-    //const updatedGood = good + 1;
-    //setTotalFeedbacks(updatedGood + bad + neutral);
   };
 
   const handleNeutralClick = () => {
     setNeutral(neutral + 1);
-    //const updatedNeutral = neutral + 1;
-    //setTotalFeedbacks(updatedNeutral + good + bad);
   };
 
   const handleBadClick = () => {
     setBad(bad + 1);
-    //const updatedBad = bad + 1;
-    //setTotalFeedbacks(updatedBad + good + neutral);
   };
 
   return (
