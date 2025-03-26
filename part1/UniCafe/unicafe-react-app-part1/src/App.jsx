@@ -30,15 +30,13 @@ const App = () => {
       <Button onClick={handleBadClick} btnName='Bad'></Button>
       <Title title='Statistics'></Title>
       {totalFeedbacks > 0 ? (
-        <>
-          <Statistics
-            title='Statistics'
-            totalFeedbacks={totalFeedbacks}
-            good={good}
-            neutral={neutral}
-            bad={bad}
-          ></Statistics>
-        </>
+        <Statistics
+          title='Statistics'
+          totalFeedbacks={totalFeedbacks}
+          good={good}
+          neutral={neutral}
+          bad={bad}
+        ></Statistics>
       ) : (
         <p>No feedback given yet.</p>
       )}
