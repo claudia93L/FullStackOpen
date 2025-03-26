@@ -79,8 +79,6 @@ const App = () => {
       </div>
       <div>
         <Title title='Anecdote with most votes'></Title>
-        /* se il voto massimo è maggiore di zero, allora ciclo sull'oggetto
-        degli aneddoti che vengono filtrati per numero massimo di voti */
         {maxVotes > 0 ? (
           mostVotedAnecdotes.map((el, index) => (
             <div key={index}>
