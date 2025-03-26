@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Title from './Components/Title';
 import Button from './Components/Button';
-import StatisticLine from './Components/StatisticLine';
+import Statistics from './Components/Statistics';
 
 const App = () => {
   // save clicks of each button to its own state
@@ -10,12 +10,6 @@ const App = () => {
   const [bad, setBad] = useState(0);
 
   const totalFeedbacks = good + neutral + bad;
-  const averageScore =
-    totalFeedbacks === 0
-      ? 0
-      : (good * 1 + neutral * 0 + bad * -1) / totalFeedbacks;
-  const positiveFeedbackPercentage =
-    totalFeedbacks === 0 ? 0 : (good / totalFeedbacks) * 100;
 
   const handleGoodClick = () => {
     setGood(good + 1);
@@ -38,16 +32,13 @@ const App = () => {
       <Title title='Statistics'></Title>
       {totalFeedbacks > 0 ? (
         <>
-          <Title title='Statistics' />
-          <StatisticLine text='Good' value={good} />
-          <StatisticLine text='Neutral' value={neutral} />
-          <StatisticLine text='Bad' value={bad} />
-          <StatisticLine text='Total Feedbacks' value={totalFeedbacks} />
-          <StatisticLine text='Average Score' value={averageScore.toFixed(2)} />
-          <StatisticLine
-            text='Positive Feedback Percentage'
-            value={`${positiveFeedbackPercentage.toFixed(2)}%`}
-          />
+          <Statistics
+            title='Statistics'
+            totalFeedbacks={totalFeedbacks}
+            good={good}
+            neutral={neutral}
+            bad={bad}
+          ></Statistics>
         </>
       ) : (
         <p>No feedback given yet.</p>
